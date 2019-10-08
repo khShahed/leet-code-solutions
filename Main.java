@@ -1,14 +1,23 @@
-import Algorithms.TwoSum;
-
-import java.util.Arrays;
+import Algorithms.AddTwoNumbers;
+import utils.ListNode;
 
 public class Main {
     public static void main(String[] args) {
-        int[] givenNums = new int[]{4, 7, 5, 2};
-        int target = 9;
+        System.out.println("MAIN");
+        ListNode l1 = new ListNode(2);
+        l1.next = new ListNode(4);
+        l1.next.next = new ListNode(3);
 
-        TwoSum twoSum = new TwoSum();
-        Arrays.stream(twoSum.twoSum(givenNums, target))
-                .forEach(System.out::println);
+        ListNode l2 = new ListNode(5);
+        l2.next = new ListNode(6);
+        l2.next.next = new ListNode(4);
+
+        AddTwoNumbers addTwoNumbers = new AddTwoNumbers();
+        ListNode result = addTwoNumbers.addTwoNumbers(l1, l2);
+        System.out.println("Result found");
+        while (result != null){
+            System.out.println(result.val);
+            result = result.next;
+        }
     }
 }
